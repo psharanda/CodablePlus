@@ -9,7 +9,9 @@
 import Foundation
 import XCTest
 import CodablePlus
+#if os(iOS)
 import UIKit
+#endif
 
 
 class CodablePlusTests: XCTestCase {
@@ -360,7 +362,7 @@ class CodablePlusTests: XCTestCase {
         }
         
     }
-    
+    #if os(iOS)
     func testCodableBox() {
         
         
@@ -401,6 +403,8 @@ class CodablePlusTests: XCTestCase {
             XCTFail("Should haven't thrown")
         }
     }
+    
+    #endif
     
     static var allTests = [
         ("testStrictModelNSNumberWithoutNulls", testStrictModelNSNumberWithoutNulls),
